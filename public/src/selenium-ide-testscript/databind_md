@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://ui.alopex.io/2.3/index.html" />
+<title>databind_md</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">databind_md</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>http://ui.alopex.io/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/2.3/dev-js/javascript.html?target=databind#basic</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>alopexPause__1000__</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>xpath=//*[@id='bindarea']/p/input[1]</td>
+	<td>ashley</td>
+</tr>
+<tr>
+	<td>assertAttribute</td>
+	<td>xpath=//*[@id=&quot;bindarea&quot;]/p/input[2]@type</td>
+	<td>password</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>xpath=//*[@id='bindarea']/p/input[2]</td>
+	<td>*****</td>
+</tr>
+<tr>
+	<td>assertChecked</td>
+	<td>xpath=//*[@id=&quot;bindarea&quot;]/label[1]/input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotChecked</td>
+	<td>xpath=//*[@id=&quot;checkbox1&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotChecked</td>
+	<td>xpath=//*[@id=&quot;checkbox2&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotChecked</td>
+	<td>xpath=//*[@id=&quot;checkbox3&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=btn_set</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertChecked</td>
+	<td>xpath=//*[@id=&quot;checkbox1&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertChecked</td>
+	<td>xpath=//*[@id=&quot;checkbox2&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=btn_get</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>{&quot;mycheckbox&quot;:[&quot;check1&quot;,&quot;check2&quot;]}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAttribute</td>
+	<td>css=#ellipse1@style</td>
+	<td>*fill: rgb(255, 255, 0)*</td>
+</tr>
+</tbody></table>
+</body>
+</html>

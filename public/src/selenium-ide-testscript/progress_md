@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://ui.alopex.io/2.3/index.html" />
+<title>progress_md</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">progress_md</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>http://ui.alopex.io/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//*[@id=&quot;gnb_menu&quot;]/li[3]/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>alopexPause__1000__</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//*[@id=&quot;gnb_menu&quot;]/li[3]/ul/li[2]/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=l_li_a_5</td>
+	<td></td>
+</tr>
+<tr>
+	<td>focus</td>
+	<td>id=overlayStart</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=overlayStart</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=div.alopex_overlay</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=overlayEnd</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>css=div.alopex_overlay</td>
+	<td></td>
+</tr>
+<tr>
+	<td>focus</td>
+	<td>id=progressStart</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=progressStart</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=div.alopex_progress_block</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=progressEnd</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>css=div.alopex_overlay</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>css=div.alopex_progress_block</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=button_show</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=div.alopex_overlay</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//div[@id='document-content-body-loadhtml']/div/div[5]/div/div/div[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=button_hide</td>
+	<td></td>
+</tr>
+<tr>
+	<td>alopexPause__1000__</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>css=div.alopex_overlay</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>//div[@id='document-content-body-loadhtml']/div/div[5]/div/div/div[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>focus</td>
+	<td>id=refreshButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=refreshButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=div.alopex_overlay</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=div.alopex_progress_block</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>alopexPause__1000__</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>css=div.alopex_overlay</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>css=div.alopex_progress_block</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//div[2]/div[2]/div[2]/div[2]/div/div/div[6]/div/div/div/div/div/ul/li[1]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>focus</td>
+	<td>id=refreshButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=refreshButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=div.alopex_overlay</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=div.alopex_progress_block</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>alopexPause__1000__</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>css=div.alopex_overlay</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>css=div.alopex_progress_block</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//div[2]/div[2]/div[2]/div[2]/div/div/div[6]/div/div/div/div/div/ul/li[1]</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

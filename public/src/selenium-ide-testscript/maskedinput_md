@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://ui.alopex.io/" />
+<title>New Test</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">New Test</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>http://ui.alopex.io/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/2.3/dev-js/javascript.html?target=maskedinput#basic</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>alopexPause__1000__</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=mobilephone1</td>
+	<td>01027330401</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=mobilephone1</td>
+	<td>010-2733-0401</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=mobilephone1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=mobilephone1</td>
+	<td>01033334444</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=mobilephone1</td>
+	<td>010-3333-4444</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=mobilephone1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=mobilephone1</td>
+	<td>01033334444555555555555</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=mobilephone1</td>
+	<td>010-3333-4444</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=mobilephone1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=mobilephone1</td>
+	<td>123</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=mobilephone1</td>
+	<td>123</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=mobilephone1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=mobilephone1</td>
+	<td>1234</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=mobilephone1</td>
+	<td>123-4</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=mobilephone1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=mobilephone1</td>
+	<td>A</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=mobilephone1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=mobilephone1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=mobilephone1</td>
+	<td>a</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=mobilephone1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=mobilephone1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=mobilephone1</td>
+	<td>ㄱ</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=mobilephone1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=mobilephone1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=mobilephone1</td>
+	<td>@</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=mobilephone1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=userinput2</td>
+	<td>홍길동</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//div[2]/div[2]/div[2]/div[2]/div/div/div[3]/div/div[1]/label/input</td>
+	<td>ㄱㅁ준버</td>
+</tr>
+<tr>
+<td>keyDown</td>
+<td>id=your text field id</td>
+<td>\17</td>
+
+<tr>
+<td>keyPress</td>
+<td>id=your text field id</td>
+<td>\65</td>
+
+<tr>
+<td>keyUp</td>
+<td>id=your text field id</td>
+<td>\17</td>
+
+<tr>
+<td>keyPress</td>
+<td>id=your text field id</td>
+<td>\127</td>
+
+
+</tbody></table>
+</body>
+</html>
