@@ -19,6 +19,6 @@
     "gulp-watch": "^4.3.11",
     "gulp-webserver": "^0.9.1",
     "jshint": "^2.9.4",
-    "selenium-webdriver": "~2.42.1"
+    "selenium-webdriver": "^2.42.1"
   }
 }

@@ -22,38 +22,41 @@ Full source at https://github.com/alopex-ui/alopex-ui-test
 Copyright © 2010-2017 SK Holdings. All rights reserved.
 
 */
-// var baseUrl = "https://alopextestpage.herokuapp.com" // Test Page
-var baseUrl = "http://localhost:9000" // Homepage local
-// var baseUrl = "http://uistg.alopex.io" // Homepage stg
-// var baseUrl = "http://ui.alopex.io" // Homepage prd
+// Homepage
 
-var testPageUrl = "http://localhost:5000" // Test Page
+// var baseUrl = "http://localhost:9000" // Homepage local
+// var baseUrl = "http://uistg.alopex.io" // Homepage stg
+var baseUrl = "http://ui.alopex.io" // Homepage prd
+
+// Test Page
+var testPageUrl = "https://alopextestpage.herokuapp.com" // Test Page
+// var testPageUrl = "http://localhost:5000"
 
 var DO_TEST = {
 	// JavaScript API
-	databinding: 			false,
-	maskedinput: 			false,
-	navigation: 			false,
-	page: 					false,
-	popup: 					false,
-	progress: 				false,
-	request: 				false,
-	setup: 					false,
-	storage: 				false,
-	validator: 				false,
-	convert: 				false,
+	databinding: 			true,
+	maskedinput: 			true,
+	navigation: 			true,
+	page: 					true,
+	popup: 					true,
+	progress: 				true,
+	request: 				true,
+	setup: 					true,
+	storage: 				true,
+	validator: 				true,
+	convert: 				true,
 
 	// Component
-	accordion: 				false,
-	autocomplete: 			false,
-	button: 				false,
-	carousel: 				false,
-	checkbox: 				false,
-	dateinput: 				false,
-	datepicker: 			false,
-	daterange: 				false,
+	accordion: 				true,
+	autocomplete: 			true,
+	button: 				true,
+	carousel: 				true,
+	checkbox: 				true,
+	dateinput: 				true,
+	datepicker: 			true,
+	daterange: 				true,
 	dialog: 				true,
-	dropdown: 				false,
+	dropdown: 				true,
 	dropdownbutton: 		true,
 	fileupload: 			true,
 	groupbutton: 			true,
@@ -77,7 +80,10 @@ var DO_TEST = {
 	webeditor: 				true,
 
 	// Test Page
-	"tabs_AUI-TS-001": 		false
+	"Autocomplete-AUI-TS-011": 	true,
+	"Dateinput-AUI-TS-006":		true,
+	"Datepicker-AUI-TS-005": 	true,
+	"Tabs-AUI-TS-001": 			true
 }
 
 var test = function(webdriver, driver, baseUrl, acceptNextAlert, verificationErrors, testPageUrl) {
@@ -3417,8 +3423,532 @@ if(DO_TEST.dialog){
  * 
  * Copyright © 2010-2017 SK Holdings. All rights reserved.
  */
-if(DO_TEST["tabs_AUI-TS-001"]){
-	// tabs_AUI-TS-001 test start
+if(DO_TEST["Autocomplete-AUI-TS-011"]){
+	// Autocomplete-AUI-TS-006 test start
+
+var DEL = "\u0008";
+var LEFT = webdriver.Key.ARROW_LEFT;
+var ENTER = ''
+
+	driver.get(testPageUrl);
+	driver.findElement(webdriver.By.css("#Autocomplete_AUI-TS-011")).click();
+
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0001_AC > input")).click();
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0001_AC > input")).sendKeys("m");
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0001_AC > input")).sendKeys(DEL);
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0001_AC > input")).sendKeys("m");
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0001_AC > ul > li:nth-child(1) > a")).click();
+	driver.sleep(1000);
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0001_T1", "S");
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0001_T2", "S");
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0001_T3", "S");
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0001_T4", "S");
+	// alopexAssertTextContains("css", "#AUI-TS-011-ATC-0001_T5", "S");
+
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0002_AC > input")).click();
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0002_AC > input")).sendKeys("i");
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0002_AC > input")).sendKeys(DEL);
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0002_AC > input")).sendKeys("d");
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0002_AC > ul > li:nth-child(1) > a")).click();
+	driver.sleep(1000);
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0002_T1", "S");
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0002_T2", "S");
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0002_T3", "S");
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0002_T4", "S");
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0002_T5", "S");
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0002_T6", "S");
+	
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0003_AC > input")).click();
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0003_AC > input")).sendKeys("m");
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0003_AC > input")).sendKeys(DEL);
+	driver.sleep(1000);
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0003_T1", "S");
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0003_T2", "S");
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0003_T3", "S");
+
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0004_AC > input")).click();
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0004_AC > input")).sendKeys("m");
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0004_AC > input")).sendKeys(DEL);
+	driver.sleep(1000);
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0004_T1", "S");
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0004_T2", "S");
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0004_T3", "S");
+
+// data-reset-button(data-url) ( AUI-TS-011-ATC-0005 ) 
+// 확인필요 reset버튼 클릭후 같은 단어 검색 안되는 현상 있음
+
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0006_AC > input")).click();
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0006_AC > input")).sendKeys("i");
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0006_AC > ul > li:nth-child(1) > a")).click();
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0006_AC > div.Clear")).click();
+	driver.sleep(1000);
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0006_T1", "S");
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0006_T2", "S");
+
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0007_AC > input")).click();
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0007_AC > input")).sendKeys("mis");
+	driver.sleep(1000);
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0007_T1", "S");
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0007_T2", "S");
+
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0008_AC > input")).click();
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0008_AC > input")).sendKeys("mis");
+	driver.sleep(1000);
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0008_T1", "S");
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0008_T2", "S");
+
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0009_AC > input")).click();
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0009_AC > input")).sendKeys("k");
+	driver.sleep(1000);
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0009_T1", "S");
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0009_T2", "S");
+
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0010_AC > input")).click();
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0010_AC > input")).sendKeys("k");
+	driver.sleep(1000);
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0010_T1", "S");
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0010_T2", "S");
+
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0011_AC > input")).click();
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0011_AC > input")).sendKeys("m");
+	driver.sleep(1000);
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0011_T1", "S");
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0011_T2", "S");
+
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0012_AC > input")).click();
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0012_AC > input")).sendKeys("i");
+	driver.sleep(1000);
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0012_T1", "S");
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0012_T2", "S");
+
+// data-fitwidth(data-url) ( AUI-TS-011-ATC-0013 )
+// - ul 의 width 는 테스트 길이만큼인가? F
+// "알로펙스 ... " 등 한글 말고, 영어로 예제 변경
+
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0014_AC > input")).click();
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0014_AC > input")).sendKeys("a");
+	driver.sleep(1000);
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0014_T1", "S");
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0014_T2", "S");
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0014_T3", "S");
+
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0015_AC > input")).click();
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0015_AC > input")).sendKeys("m");
+	driver.sleep(1000);
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0015_T1", "S");
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0015_T2", "S");
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0015_T3", "S");
+
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0016_AC > input")).click();
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0016_AC > input")).sendKeys("a");
+	driver.sleep(1000);
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0016_T1", "S");
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0016_T2", "S");
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0016_T3", "S");
+
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0017_AC > input")).click();
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0017_AC > input")).sendKeys("m");
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0017_AC > div.Opener")).click();
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0017_AC > div.Opener")).click();
+	driver.sleep(1000);
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0017_T1", "S");
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0017_T2", "S");
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0017_T3", "S");
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0017_T4", "S");
+
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0018_AC > input")).click();
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0018_AC > input")).sendKeys("i");
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0018_AC > div.Opener")).click();
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0018_AC > div.Opener")).click();
+	driver.sleep(1000);
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0018_T1", "S");
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0018_T2", "S");
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0018_T3", "S");
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0018_T4", "S");
+
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0019_AC > input")).click();
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0019_AC > input")).sendKeys("i da ho");
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0019_AC > input")).clear();
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0019_AC > input")).sendKeys("I da ho");
+	driver.sleep(1000);
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0019_T1", "S");
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0019_T2", "S");
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0019_T3", "S");
+
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0020_AC > input")).click();
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0020_AC > input")).sendKeys("m");
+	driver.sleep(1000);
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0020_T1", "S");
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0020_T2", "S");
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0020_T3", "S");
+
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0021_AC > input")).click();
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0021_AC > input")).sendKeys("i");
+	driver.sleep(1000);
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0021_T1", "S");
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0021_T2", "S");
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0021_T3", "S");
+
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0022_AC > input")).click();
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0022_AC > input")).sendKeys("m");
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0022_AC > input")).sendKeys(webdriver.Key.ENTER);
+	driver.sleep(1000);
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0022_T1", "S");
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0022_T2", "S");
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0022_T3", "S");
+
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0023_AC > input")).click();
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0023_AC > input")).sendKeys("i");
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0023_AC > input")).sendKeys(webdriver.Key.ENTER);
+	driver.sleep(1000);
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0023_T1", "S");
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0023_T2", "S");
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0023_T3", "S");
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0023_T4", "S");
+
+// setOptions(before) ( AUI-TS-011-ATC-0024 ) 
+// 확인필요 다른 data-url에 영향을 미침. 글로벌 설정이 되는 듯 합니다. like setup
+
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0025_AC > input")).click();
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0025_AC > input")).sendKeys("m");
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0025_AC > ul > li:nth-child(1) > a")).click();
+    seleniumIde.closeAlertAndAssertItsText(driver, 'selected : {"text":"Maine","capital":"Augusta"}', acceptNextAlert);
+    acceptNextAlert = true;
+	driver.sleep(1000);
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0025_T1", "S");
+
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0026_AC > input")).click();
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0026_AC > input")).sendKeys("i");
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0026_AC > ul > li:nth-child(1) > a")).click();
+    seleniumIde.closeAlertAndAssertItsText(driver, 'selected : {"text":"Idaho"}', acceptNextAlert);
+    acceptNextAlert = true;
+	driver.sleep(1000);
+	alopexAssertTextContains("css", "#AUI-TS-011-ATC-0026_T1", "S");
+
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0027_BTN")).click();
+    seleniumIde.closeAlertAndAssertItsText(driver, 'getSelectedData : {"text":"Empty"}', acceptNextAlert);
+    acceptNextAlert = true;
+    driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0027_AC > input")).click();
+    driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0027_AC > input")).sendKeys("i");
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0027_AC > ul > li:nth-child(1) > a")).click();
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0027_BTN")).click();
+    seleniumIde.closeAlertAndAssertItsText(driver, 'getSelectedData : {"text":"Idaho"}', acceptNextAlert);
+    acceptNextAlert = true;
+    driver.sleep(1000);
+    alopexAssertTextContains("css", "#AUI-TS-011-ATC-0027_T1", "S");
+    alopexAssertTextContains("css", "#AUI-TS-011-ATC-0027_T2", "S");
+
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0028_BTN1")).click();
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0028_BTN2")).click();
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0028_BTN3")).click();
+	driver.sleep(1000);
+    alopexAssertTextContains("css", "#AUI-TS-011-ATC-0028_T1", "S");
+    alopexAssertTextContains("css", "#AUI-TS-011-ATC-0028_T2", "S");
+    alopexAssertTextContains("css", "#AUI-TS-011-ATC-0028_T3", "S");
+
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0029_AC > input")).click();
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0029_AC > input")).sendKeys("i");
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0029_BTN1")).click();
+	driver.sleep(1000);
+	driver.findElement(webdriver.By.css("#AUI-TS-011-ATC-0029_BTN2")).click();
+	driver.sleep(1000);
+    alopexAssertTextContains("css", "#AUI-TS-011-ATC-0029_T1", "S");
+    alopexAssertTextContains("css", "#AUI-TS-011-ATC-0029_T2", "S");
+    alopexAssertTextContains("css", "#AUI-TS-011-ATC-0029_T3", "S");
+
+// setCustomFilter ( AUI-TS-011-ATC-0030 )
+// - 입력 필드에 "I" (또는 다른 어떤 키워드) 입력 후 에 나오는 목록 중에서는 Idaho 값이 있는 li 가 없고 , 
+// 항상 4개의 li 값만 존재하는가?(Illinois,Indiana,Iowa,Utah); 
+
+	// Autocomplete-AUI-TS-006 test end
+}
+/**
+ * webdriver-recipes - 
+ * 
+ * @version v1.0.0
+ * @link http://ui.alopex.io/
+ * @license http://ui.alopex.io/
+ * 
+ * Copyright © 2010-2017 SK Holdings. All rights reserved.
+ */
+if(DO_TEST["Dateinput-AUI-TS-006"]){
+	// Dateinput-AUI-TS-006 test start
+
+	driver.get(testPageUrl);
+	driver.findElement(webdriver.By.css("#Dateinput_AUI-TS-006")).click();
+
+	driver.findElement(webdriver.By.css("#AUI-TS-006-ATC-0001_INPUT")).click();
+	driver.findElement(webdriver.By.css("#datepicker_AUI-TS-006-ATC-0001_INPUT > table > tbody > tr td a.Today")).click();
+	alopexAssertTextContains("css", "#AUI-TS-006-ATC-0001_T1", "S");
+	alopexAssertTextContains("css", "#AUI-TS-006-ATC-0001_T2", "S");
+	alopexAssertTextContains("css", "#AUI-TS-006-ATC-0001_T3", "S");
+	alopexAssertTextContains("css", "#AUI-TS-006-ATC-0001_T4", "S");
+	alopexAssertTextContains("css", "#AUI-TS-006-ATC-0001_T5", "S");
+	alopexAssertTextContains("css", "#AUI-TS-006-ATC-0001_T6", "S");
+	alopexAssertTextContains("css", "#AUI-TS-006-ATC-0001_T7", "S");
+
+	driver.findElement(webdriver.By.css("#AUI-TS-006-ATC-0002_DIV > div > div.Calendar")).click();
+	driver.findElement(webdriver.By.css("#datepicker_AUI-TS-006-ATC-0002_INPUT > table > tbody > tr td a.Today")).click();
+	alopexAssertTextContains("css", "#AUI-TS-006-ATC-0002_T1", "S");
+	alopexAssertTextContains("css", "#AUI-TS-006-ATC-0002_T2", "S");
+	alopexAssertTextContains("css", "#AUI-TS-006-ATC-0002_T3", "S");
+	alopexAssertTextContains("css", "#AUI-TS-006-ATC-0002_T4", "S");
+	alopexAssertTextContains("css", "#AUI-TS-006-ATC-0002_T5", "S");
+	alopexAssertTextContains("css", "#AUI-TS-006-ATC-0002_T6", "S");
+	alopexAssertTextContains("css", "#AUI-TS-006-ATC-0002_T7", "S");
+
+	driver.findElement(webdriver.By.css("#AUI-TS-006-ATC-0003_INPUT")).click();
+	driver.findElement(webdriver.By.css("#datepicker_AUI-TS-006-ATC-0003_INPUT > table > tbody > tr td a.Today")).click();
+	alopexAssertTextContains("css", "#AUI-TS-006-ATC-0003_T1", "S");
+	alopexAssertTextContains("css", "#AUI-TS-006-ATC-0003_T2", "S");
+
+ // AUI-TS-006-ATC-0004
+ // 확인필요 focusout 시에 값이 사라짐
+
+	driver.findElement(webdriver.By.css("#AUI-TS-006-ATC-0005_INPUT")).click();
+	driver.findElement(webdriver.By.css("#datepicker_AUI-TS-006-ATC-0005_INPUT > table > tbody > tr td a.Today")).click();
+	alopexAssertTextContains("css", "#AUI-TS-006-ATC-0005_T1", "S");
+	alopexAssertTextContains("css", "#AUI-TS-006-ATC-0005_T2", "S");
+
+	driver.findElement(webdriver.By.css("#AUI-TS-006-ATC-0006_INPUT")).click();
+	driver.findElement(webdriver.By.css("#datepicker_AUI-TS-006-ATC-0006_INPUT > table > tbody > tr td a.Today")).click();
+	alopexAssertTextContains("css", "#AUI-TS-006-ATC-0006_T1", "S");
+	driver.findElement(webdriver.By.css("#AUI-TS-006-ATC-0006_DIV > div > div.Clear")).click();
+	driver.sleep(200);
+	alopexAssertTextContains("css", "#AUI-TS-006-ATC-0006_T2", "S");
+
+// AUI-TS-006-ATC-0007
+// 기본 선택 된 달을 click 하면 textinput 요소에 시스템상 이번 달이 표시되는가? (예: 201612) F 
+
+	driver.findElement(webdriver.By.css("#AUI-TS-006-ATC-0008_INPUT")).click();
+	driver.findElement(webdriver.By.css("#datepicker_AUI-TS-006-ATC-0008_INPUT > table > tbody > tr td a.Today")).click();
+	alopexAssertTextContains("css", "#AUI-TS-006-ATC-0008_T1", "S");
+	alopexAssertTextContains("css", "#AUI-TS-006-ATC-0008_T2", "S");
+	alopexAssertTextContains("css", "#AUI-TS-006-ATC-0008_T3", "S");
+
+	driver.findElement(webdriver.By.css("#AUI-TS-006-ATC-0009_INPUT")).click();
+	driver.findElement(webdriver.By.css("#datepicker_AUI-TS-006-ATC-0009_INPUT > table > tbody > tr td a.Today")).click();
+	alopexAssertTextContains("css", "#AUI-TS-006-ATC-0009_T1", "S");
+	alopexAssertTextContains("css", "#AUI-TS-006-ATC-0009_T2", "S");
+	alopexAssertTextContains("css", "#AUI-TS-006-ATC-0009_T3", "S");
+	alopexAssertTextContains("css", "#AUI-TS-006-ATC-0009_T4", "S");
+
+	alopexAssertTextContains("css", "#AUI-TS-006-ATC-0010_T1", "S");
+
+	alopexAssertTextContains("css", "#AUI-TS-006-ATC-0011_T1", "S");
+
+	alopexAssertTextContains("css", "#AUI-TS-006-ATC-0012_T1", "S");
+
+	alopexAssertTextContains("css", "#AUI-TS-006-ATC-0013_T1", "S");
+
+	driver.findElement(webdriver.By.css("#AUI-TS-006-ATC-0014_INPUT")).click();
+	driver.findElement(webdriver.By.css("#AUI-TS-006-ATC-0014_DIV")).click();
+	driver.sleep(1100);
+	alopexAssertTextContains("css", "#AUI-TS-006-ATC-0014_T1", "S");
+
+	driver.findElement(webdriver.By.css("#AUI-TS-006-ATC-0015_BTN1")).click();
+	driver.findElement(webdriver.By.css("#AUI-TS-006-ATC-0015_BTN2")).click();
+	alopexAssertTextContains("css", "#AUI-TS-006-ATC-0015_T1", "S");
+	alopexAssertTextContains("css", "#AUI-TS-006-ATC-0015_T2", "S");
+
+	driver.findElement(webdriver.By.css("#AUI-TS-006-ATC-0016_INPUT")).click();
+	driver.findElement(webdriver.By.css("#datepicker_AUI-TS-006-ATC-0016_INPUT > table > tbody > tr td a.Today")).click();
+	alopexAssertTextContains("css", "#AUI-TS-006-ATC-0016_T1", "S");
+	driver.findElement(webdriver.By.css("#AUI-TS-006-ATC-0016_BTN1")).click();
+	alopexAssertTextContains("css", "#AUI-TS-006-ATC-0016_T2", "S");
+
+	// Dateinput-AUI-TS-006 test end
+}
+/**
+ * webdriver-recipes - 
+ * 
+ * @version v1.0.0
+ * @link http://ui.alopex.io/
+ * @license http://ui.alopex.io/
+ * 
+ * Copyright © 2010-2017 SK Holdings. All rights reserved.
+ */
+if(DO_TEST["Datepicker-AUI-TS-005"]){
+	// Datepicker-AUI-TS-005 test start
+
+	driver.get(testPageUrl);
+	driver.findElement(webdriver.By.css("#Datepicker_AUI-TS-005")).click();
+
+	driver.findElement(webdriver.By.css("#AUI-TS-005-ATC-0001_BTN1")).click();
+	driver.findElement(webdriver.By.css("#datepicker_AUI-TS-005-ATC-0001_BTN1 > table > tbody > tr td a.Today")).click();
+	alopexAssertTextContains("css", "#AUI-TS-005-ATC-0001_T1", "S");
+	alopexAssertTextContains("css", "#AUI-TS-005-ATC-0001_T2", "S");
+	alopexAssertTextContains("css", "#AUI-TS-005-ATC-0001_T3", "S");
+	alopexAssertTextContains("css", "#AUI-TS-005-ATC-0001_T4", "S");
+	alopexAssertTextContains("css", "#AUI-TS-005-ATC-0001_T5", "S");
+	alopexAssertTextContains("css", "#AUI-TS-005-ATC-0001_T6", "S");
+
+	driver.findElement(webdriver.By.css("#AUI-TS-005-ATC-0002_BTN1")).click();
+	driver.findElement(webdriver.By.css("#datepicker_AUI-TS-005-ATC-0002_BTN1 > table > tbody > tr td a.Today")).click();
+	alopexAssertTextContains("css", "#AUI-TS-005-ATC-0002_T1", "S");
+	alopexAssertTextContains("css", "#AUI-TS-005-ATC-0002_T2", "S");
+	alopexAssertTextContains("css", "#AUI-TS-005-ATC-0002_T3", "S");
+	alopexAssertTextContains("css", "#AUI-TS-005-ATC-0002_T4", "S");
+
+	driver.findElement(webdriver.By.css("#AUI-TS-005-ATC-0003_BTN1")).click();
+	driver.findElement(webdriver.By.css("#datepicker_AUI-TS-005-ATC-0003_BTN1 > table > tbody > tr td a.Today")).click();
+	alopexAssertTextContains("css", "#AUI-TS-005-ATC-0003_T1", "S");
+	alopexAssertTextContains("css", "#AUI-TS-005-ATC-0003_T2", "S");
+	alopexAssertTextContains("css", "#AUI-TS-005-ATC-0003_T3", "S");
+	alopexAssertTextContains("css", "#AUI-TS-005-ATC-0003_T4", "S");
+
+	driver.findElement(webdriver.By.css("#AUI-TS-005-ATC-0004_BTN1")).click();
+	driver.findElement(webdriver.By.css("#datepicker_AUI-TS-005-ATC-0004_BTN1 > table > tbody > tr td a.Today")).click();
+	alopexAssertTextContains("css", "#AUI-TS-005-ATC-0004_T1", "S");
+	alopexAssertTextContains("css", "#AUI-TS-005-ATC-0004_T2", "S");
+	alopexAssertTextContains("css", "#AUI-TS-005-ATC-0004_T3", "S");
+	alopexAssertTextContains("css", "#AUI-TS-005-ATC-0004_T4", "S");
+// Fail 발생. 확인필요.	
+// alopexAssertTextContains("css", "#AUI-TS-005-ATC-0004_T5", "S");
+
+	driver.findElement(webdriver.By.css("#AUI-TS-005-ATC-0005_BTN1")).click();
+	alopexAssertTextContains("css", "#AUI-TS-005-ATC-0005_T1", "S");
+
+	driver.findElement(webdriver.By.css("#AUI-TS-005-ATC-0006_BTN1")).click();
+	alopexAssertTextContains("css", "#AUI-TS-005-ATC-0006_T1", "S");
+
+	driver.findElement(webdriver.By.css("#AUI-TS-005-ATC-0007_BTN1")).click();
+	driver.findElement(webdriver.By.css("#datepicker_AUI-TS-005-ATC-0007_BTN1 > table > tbody > tr td a.Today")).click();
+	alopexAssertTextContains("css", "#AUI-TS-005-ATC-0007_T1", "S");
+
+// driver.findElement(webdriver.By.css("#AUI-TS-005-ATC-0008_BTN1")).click();
+// driver.findElement(webdriver.By.css("#datepicker_AUI-TS-005-ATC-0008_BTN1 > table > tbody > tr td a.Today")).click();
+// // Fail 발생. 확인필요.	
+// alopexAssertTextContains("css", "#AUI-TS-005-ATC-0008_T1", "S");
+
+	driver.findElement(webdriver.By.css("#AUI-TS-005-ATC-0009_BTN1")).click();
+	driver.findElement(webdriver.By.css("#datepicker_AUI-TS-005-ATC-0009_BTN1 > table > tbody > tr td a.Today")).click();
+	alopexAssertTextContains("css", "#AUI-TS-005-ATC-0009_T1", "S");
+
+	driver.findElement(webdriver.By.css("#AUI-TS-005-ATC-0010_BTN1")).click();
+	driver.findElement(webdriver.By.css("#datepicker_AUI-TS-005-ATC-0010_BTN1 > table > tbody > tr td a.Today")).click();
+	alopexAssertTextContains("css", "#AUI-TS-005-ATC-0010_T1", "S");
+
+	driver.findElement(webdriver.By.css("#AUI-TS-005-ATC-0011_BTN1")).click();
+	driver.findElement(webdriver.By.css("#datepicker_AUI-TS-005-ATC-0011_BTN1 > table > tbody > tr td a[href='#1']")).click();
+	driver.sleep(500);
+	alopexAssertTextContains("css", "#AUI-TS-005-ATC-0011_T1", "S");
+	alopexAssertTextContains("css", "#AUI-TS-005-ATC-0011_T2", "S");
+	alopexAssertTextContains("css", "#AUI-TS-005-ATC-0011_T3", "S");
+// // Fail 발생. 확인필요.	
+// alopexAssertTextContains("css", "#AUI-TS-005-ATC-0011_T4", "S");
+
+	driver.findElement(webdriver.By.css("#AUI-TS-005-ATC-0012_BTN1")).click();
+	driver.findElement(webdriver.By.css("#datepicker_AUI-TS-005-ATC-0012_BTN1 > table > tbody > tr td a[href='#1']")).click();
+	alopexAssertTextContains("css", "#AUI-TS-005-ATC-0012_T1", "S");
+	alopexAssertTextContains("css", "#AUI-TS-005-ATC-0012_T2", "S");
+	alopexAssertTextContains("css", "#AUI-TS-005-ATC-0012_T3", "S");
+// // Fail 발생. 확인필요.	
+// alopexAssertTextContains("css", "#AUI-TS-005-ATC-0012_T4", "S");
+
+	driver.findElement(webdriver.By.css("#AUI-TS-005-ATC-0013_BTN1")).click();
+	driver.findElement(webdriver.By.css("#datepicker_AUI-TS-005-ATC-0013_BTN1 > table > tbody > tr td a[href='#1']")).click();
+	seleniumIde.closeAlertAndAssertItsText(driver, 'It is a special Day on', acceptNextAlert);
+    acceptNextAlert = true;
+	alopexAssertTextContains("css", "#AUI-TS-005-ATC-0013_T1", "S");
+// // Fail 발생. 확인필요.	
+// alopexAssertTextContains("css", "#AUI-TS-005-ATC-0013_T2", "S");
+
+	driver.findElement(webdriver.By.css("#AUI-TS-005-ATC-0014_BTN1")).click();
+	driver.findElement(webdriver.By.css("#datepicker_AUI-TS-005-ATC-0014_BTN1 > table > tbody > tr td a[href='#1']")).click();
+	driver.findElement(webdriver.By.css("#datepicker_AUI-TS-005-ATC-0014_BTN1 > table > tbody > tr td a[href='#15']")).click();
+	alopexAssertTextContains("css", "#AUI-TS-005-ATC-0014_T1", "S");
+	alopexAssertTextContains("css", "#AUI-TS-005-ATC-0014_T2", "S");
+// // Fail 발생. 확인필요.	
+// alopexAssertTextContains("css", "#AUI-TS-005-ATC-0014_T3", "S");
+
+
+// showDatePicker_showothermonth ( AUI-TS-005-ATC-0015 )
+
+// API.showDatePicker(function,{showothermonth })
+// TypeFunction
+// TestCase
+
+// - 기본 datePicker 구성
+// - 'open' 버튼 click 시 showDatePicker(func,option)의 옵션 항목에 다음과 같이 설정
+// ​
+//   {showothermonth: true}
+// ​
+// - 'open' 버튼 click
+// 결과
+// - open 후 나타나는 Datepicker에 tbody >tr>td 안에 있는 < a > 태그 중 PrevMonthDay class 를 가지는 요소의 개수가 4개인가? F 
+// - 위 검출된 4개의 < a > 태그의 텍스트는 27,28,29,30 이 맞는가? F 
+
+
+	driver.findElement(webdriver.By.css("#AUI-TS-005-ATC-0016_BTN1")).click();
+	driver.findElement(webdriver.By.css("#datepicker_AUI-TS-005-ATC-0016_BTN1 > table > tbody > tr td a.Today")).click();
+	alopexAssertTextContains("css", "#AUI-TS-005-ATC-0016_T1", "S");
+	alopexAssertTextContains("css", "#AUI-TS-005-ATC-0016_T2", "S");
+	alopexAssertTextContains("css", "#AUI-TS-005-ATC-0016_T3", "S");
+	alopexAssertTextContains("css", "#AUI-TS-005-ATC-0016_T4", "S");
+
+	driver.findElement(webdriver.By.css("#AUI-TS-005-ATC-0017_BTN1")).click();
+	driver.findElement(webdriver.By.css("#AUI-TS-005-ATC-0017_BTN2")).click();
+	driver.sleep(500);
+	alopexAssertTextContains("css", "#AUI-TS-005-ATC-0017_T1", "S");
+
+	// Datepicker-AUI-TS-005 test end
+}
+/**
+ * webdriver-recipes - 
+ * 
+ * @version v1.0.0
+ * @link http://ui.alopex.io/
+ * @license http://ui.alopex.io/
+ * 
+ * Copyright © 2010-2017 SK Holdings. All rights reserved.
+ */
+if(DO_TEST["Tabs-AUI-TS-001"]){
+	// Tabs-AUI-TS-001 test start
 
 	driver.get(testPageUrl);
 	driver.findElement(webdriver.By.css("#Tabs_AUI-TS-001")).click();

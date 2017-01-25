@@ -60,8 +60,13 @@ gulp.task('concat-testscript_target', function () {
 		SRC + '/testscript/target/homepage/dev-component/datepicker_md.js',
 		SRC + '/testscript/target/homepage/dev-component/daterange_md.js',
 		SRC + '/testscript/target/homepage/dev-component/dialog_md.js',
+		
 		// testpage/components
-		SRC + '/testscript/target/testpage/components/tabs_testpage.js',	
+		SRC + '/testscript/target/testpage/components/Autocomplete-AUI-TS-011.js',
+		SRC + '/testscript/target/testpage/components/Dateinput-AUI-TS-006.js',
+		SRC + '/testscript/target/testpage/components/Datepicker-AUI-TS-005.js',
+		SRC + '/testscript/target/testpage/components/Tabs-AUI-TS-001.js',
+		
 		])
 	// 성능 이슈로 일단 주석 처리
     // .pipe(logger({
@@ -128,7 +133,8 @@ gulp.task('copy-selenium-ide', function () {
 
 
 gulp.task('watch', function(){
-	return gulp.watch(SRC + '/testscript/**/*', { ignoreInitial: true }, tasks_watch);
+	gulp.watch(SRC + '/testscript/**/*', { ignoreInitial: true }, tasks_watch);
+	gulp.watch('gulpfile.js', { ignoreInitial: true }, tasks_watch);
 });
 
 
